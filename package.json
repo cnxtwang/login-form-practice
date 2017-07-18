@@ -1,0 +1,19 @@
+{
+  "name": "login-form-practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "xtwang <xtwang@thoughtworks.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --history-api-fallback --hot --inline --progress --colors --port 4000 --host 0.0.0.0 --config webpack.config.js"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}
