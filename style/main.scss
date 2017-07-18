@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,7 +14,7 @@ body {
   height: 100vh;
 
   .container {
-    background: white;
+    background: linear-gradient(to top, white,rgba(255,255,255,0),white), url("../static/background.jpg") white;
     border-radius: .4em;
     padding: 1.92em 1.65em 0;
     height: 100%;
@@ -19,8 +23,8 @@ body {
       .logo {
         border-radius: 100%;
         border: 3px solid #88898D;
-        width: 13px;
-        height: 13px;
+        width: 1.19em;
+        height: 1.19em;
       }
 
       nav {
@@ -40,6 +44,7 @@ body {
             a {
               height: 1.5em;
               vertical-align: middle;
+              cursor: pointer;
             }
 
             img {
@@ -52,6 +57,69 @@ body {
             &:last-child {
               margin-right: 0.5em;
             }
+          }
+        }
+      }
+    }
+
+    form {
+      position: relative;
+      top: 15.85em;
+      left: 37.2%;
+      width: 17.9em;
+      background: white;
+
+      .input-group {
+        width: 100%;
+        display: inline-block;
+        position: relative;
+        border-radius: .3em;
+        border: .4em solid #F1F1F2;
+        padding: .21em .5em 0;
+
+        div {
+          height: 3.05em;
+        }
+
+        div:first-child {
+          border-bottom: .02em solid #CCCCCC;
+        }
+
+        input {
+          width: 100%;
+          height: 100%;
+          border: none;
+          outline: none;
+          font-size: 1.15em;
+          padding-left: 0.6em;
+        }
+      }
+
+      input.submit {
+        width: 100%;
+        border: none;
+        outline: none;
+        background: #8A95E3;
+        color: white;
+        font-size: 1.17em;
+        height: 2.4em;
+        margin-top: 0.8em;
+        border-radius: .25em;
+        cursor: pointer;
+      }
+
+      .options {
+        text-align: center;
+        font-size: .94em;
+        margin-top: 1em;
+        color: #A4A3A3;
+
+        a {
+          text-decoration: underline;
+          cursor: pointer;
+
+          &:first-child {
+            margin-right: 1.1em;
           }
         }
       }
