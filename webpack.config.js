@@ -1,9 +1,12 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path')
 
 module.exports = {
   entry: ['./javascript/main.js', './style/main.scss'],
   output: {
-    filename: 'build/bundle.js'
+    filename: 'build/bundle.js',
+    path: path.resolve(__dirname, './build'),
+    publicPath: process.env.API_ENV ? './' : '/'
   },
   module: {
     rules: [
