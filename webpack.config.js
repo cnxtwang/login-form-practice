@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './src/javascript/main.js',
+  entry: ['./src/javascript/main.js', './index.html'],
   output: {
     filename: 'bundle.js',
     path: __dirname + '/build/',
@@ -12,8 +12,8 @@ module.exports = {
         loaders: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        test: /\.html$/,
-        loader: "raw-loader"
+        test: /\.(html)$/,
+        loader: 'file-loader?name=[path][name].[ext]!extract-loader!html-loader'
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
