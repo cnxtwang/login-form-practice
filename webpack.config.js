@@ -2,17 +2,17 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path')
 
 module.exports = {
-  entry: ['./javascript/main.js', './style/main.scss'],
+  entry: './src/javascript/main.js',
   output: {
     filename: 'build/bundle.js',
     path: path.resolve(__dirname, './build'),
-    publicPath: process.env.API_ENV ? './' : '/'
+    publicPath: '/'
   },
   module: {
     rules: [
       {
         test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+        loaders: ['css-hot-loader'].concat(ExtractTextPlugin.extract(['css-loader', 'sass-loader']))
       },
       {
         test: /\.html$/,
@@ -20,10 +20,24 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        ]
+        loaders: ['file-loader?name=[hash].[ext]', {
+          loader: 'image-webpack-loader',
+          query: {
+            mozjpeg: {
+              progressive: true
+            },
+            gifsicle: {
+              interlaced: false
+            },
+            optipng: {
+              optimizationLevel: 4
+            },
+            pngquant: {
+              quality: '75-90',
+              speed: 3
+            }
+          }
+        }]
       }
     ]
   },

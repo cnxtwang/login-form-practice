@@ -12,6 +12,7 @@ body {
   background: #5E6586;
   padding: 3.3em 3.4em 0;
   height: 100vh;
+  min-height: 35em;
 
   .container {
     background: linear-gradient(to top, white,rgba(255,255,255,0),white), url("../static/background.jpg") white;
@@ -65,7 +66,7 @@ body {
 
     form {
       position: relative;
-      top: 15.85em;
+      top: 36.8%;
       left: 37.2%;
       width: 17.9em;
       background: white;
